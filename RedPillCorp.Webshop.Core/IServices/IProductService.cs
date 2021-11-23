@@ -8,9 +8,8 @@ namespace RedPillCorp.WebShop.Core.IServices
     public interface IProductService
     {
         List<(int, string)> GetAllIdsAndNames();
-
         Product GetMostExpensiveProduct();
-
         Product GetById(Guid id);
+        Product GetCheapestProduct();
     }
 }

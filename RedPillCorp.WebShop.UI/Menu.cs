@@ -15,16 +15,18 @@ namespace RedPillCorp.WebShop.UI
         public void Start()
         {
             ListAllIds();
+            Console.ReadLine();
             ShowMostExpensiveProduct();
+            Console.ReadLine();
+            ShowCheapestProduct();
             Console.ReadLine();
         }
 
         private void ListAllIds()
         {
             Console.WriteLine("List of all your products");
-            Console.WriteLine("");
+           
             var products = _productService.GetAllIdsAndNames();
-
             foreach (var product in products)
             {
                 Console.WriteLine($"Product: {product.Item1}, {product.Item2}");
@@ -35,6 +37,12 @@ namespace RedPillCorp.WebShop.UI
         {
             Console.WriteLine("Most Expensive product:");
             Console.WriteLine("Product: " + _productService.GetMostExpensiveProduct().Name + " Price: " + _productService.GetMostExpensiveProduct().Price);
+        }
+
+        public void ShowCheapestProduct()
+        {
+            Console.WriteLine("Cheapest product:");
+            Console.WriteLine("Product: " + _productService.GetCheapestProduct().Name + " Price: " + _productService.GetCheapestProduct().Price);
         }
     }
 }

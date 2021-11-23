@@ -6,12 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.10" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RedPillCorp.WebShop.EF.SQLite\RedPillCorp.WebShop.EF.SQLite.csproj" />
+    <ProjectReference Include="..\RedPillCorp.WebShop.EF.SQL\RedPillCorp.WebShop.EF.SQL.csproj" />
   </ItemGroup>
 
 </Project>

@@ -18,19 +18,22 @@ namespace RedPillCorp.WebShop.Domain.Services
             _repo = repo;
         }
 
+
         public List<(int, string)> GetAllIdsAndNames()
         {
             return _repo.GetAllIdsAndNames();
         }
-
         public Product GetMostExpensiveProduct()
         {
             return _repo.GetMostExpensiveProduct();
         }
-
         public Product GetById(Guid id)
         {
             return _repo.GetById(id);
+        }
+        public Product GetCheapestProduct()
+        {
+            return _repo.GetCheapestProduct();
         }
     }
 }

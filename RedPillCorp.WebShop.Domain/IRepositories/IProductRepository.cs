@@ -10,5 +10,6 @@ namespace RedPillCorp.WebShop.Domain.IRepositories
         List<(int, string)> GetAllIdsAndNames();
         Product GetMostExpensiveProduct();
         Product GetById(Guid id);
+        Product GetCheapestProduct();
     }
 }
