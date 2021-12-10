@@ -3,17 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedPillCorp.WebShop.UI", "RedPillCorp.WebShop.UI\RedPillCorp.WebShop.UI.csproj", "{69CE5675-4206-4C12-8855-F6A7AB5EEA5A}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationCore", "ApplicationCore", "{A1031651-B207-4B42-820B-00C4ACB4A546}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{A1031651-B207-4B42-820B-00C4ACB4A546}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{32D6E869-7314-46A2-92AD-A916D7A54FB2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{32BCFD31-2AF3-4A86-96E9-6B491A7B36E0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{DDC8C152-07A0-44EB-BA14-63B7450B9BE5}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedPillCorp.WebShop.Core", "RedPillCorp.Webshop.Core\RedPillCorp.WebShop.Core.csproj", "{6B8DF2BC-F473-4A49-872C-65CBBA092CC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedPillCorp.WebShop.Application", "RedPillCorp.Webshop.Core\RedPillCorp.WebShop.Application.csproj", "{6B8DF2BC-F473-4A49-872C-65CBBA092CC4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedPillCorp.WebShop.Domain", "RedPillCorp.WebShop.Domain\RedPillCorp.WebShop.Domain.csproj", "{3BEB8B6E-08E8-4E0E-ABEF-6D9B72AAE26B}"
 EndProject
@@ -25,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebAPI", "WebAPI", "{24D1F9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedPillCorp.WebShop.WebAPI", "RedPillCorp.WebShop.WebAPI\RedPillCorp.WebShop.WebAPI.csproj", "{3283D447-5696-4E50-B076-20B360706E8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedPillCorp.WebShop.EF.SQL", "RedPillCorp.WebShop.EF.SQL\RedPillCorp.WebShop.EF.SQL.csproj", "{1291C50D-4393-4F3B-9BDE-E9D530AC6AA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedPillCorp.WebShop.EF.SQL", "RedPillCorp.WebShop.EF.SQL\RedPillCorp.WebShop.EF.SQL.csproj", "{1291C50D-4393-4F3B-9BDE-E9D530AC6AA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +29,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{69CE5675-4206-4C12-8855-F6A7AB5EEA5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{69CE5675-4206-4C12-8855-F6A7AB5EEA5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{69CE5675-4206-4C12-8855-F6A7AB5EEA5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{69CE5675-4206-4C12-8855-F6A7AB5EEA5A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6B8DF2BC-F473-4A49-872C-65CBBA092CC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6B8DF2BC-F473-4A49-872C-65CBBA092CC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B8DF2BC-F473-4A49-872C-65CBBA092CC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -66,7 +58,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{69CE5675-4206-4C12-8855-F6A7AB5EEA5A} = {DDC8C152-07A0-44EB-BA14-63B7450B9BE5}
 		{6B8DF2BC-F473-4A49-872C-65CBBA092CC4} = {A1031651-B207-4B42-820B-00C4ACB4A546}
 		{3BEB8B6E-08E8-4E0E-ABEF-6D9B72AAE26B} = {A1031651-B207-4B42-820B-00C4ACB4A546}
 		{5E1C64F2-5FB8-4EC2-8299-B7CC82BA44D1} = {32D6E869-7314-46A2-92AD-A916D7A54FB2}

@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using RedPillCorp.WebShop.Core.IServices;
-using RedPillCorp.WebShop.Core.Models;
+
+using RedPillCorp.WebShop.Application.IServices;
+using RedPillCorp.WebShop.Application.Models;
 using RedPillCorp.WebShop.Domain.IRepositories;
 using RedPillCorp.WebShop.Domain.Services;
 using RedPillCorp.WebShop.EF.SQL;
@@ -30,18 +31,18 @@ namespace RedPillCorp.WebShop.Test.xUnit
         }
 
         [Fact]
-        public void GetAllIdsAndNames()
+        public void Test1_GetAllIdsAndNames()
         {
             List<(int, string)> result = new List<(int, string)>();
             result.Add((1, "Redbull"));
             result.Add((2, "Monster"));
             result.Add((3, "Cult"));
-
+            
             Assert.Equal(result, _service.GetAllIdsAndNames());
         }
 
         [Fact]
-        public void GetMostExpensiveProduct()
+        public void Test2_GetMostExpensiveProduct()
         {
             Product productTest = new Product()
             {
@@ -53,7 +54,19 @@ namespace RedPillCorp.WebShop.Test.xUnit
         }
 
         [Fact]
-        public void GetById()
+        public void Test3_GetCheapestProduct()
+        {
+            Product productTest = new Product()
+            {
+                Name = "Cult",
+                Price = 10,
+            };
+            Product productService = _service.GetCheapestProduct();
+            Assert.True(productTest.Name == productService.Name && productTest.Price == productService.Price);
+        }
+
+        [Fact]
+        public void Test4_GetById()
         {
             Guid id = Guid.Parse("6f8b1b06-cbf3-4130-8f83-578f9659c8cb");
 
@@ -65,16 +78,34 @@ namespace RedPillCorp.WebShop.Test.xUnit
             Assert.True(productTest.Id == productService.Id);
 
         }
+
         [Fact]
-        public void GetCheapestProduct()
+        public void Test5_CreateProduct()
         {
+
             Product productTest = new Product()
             {
-                Name = "Cult",
-                Price = 10,
+                Name = "X-Ray",
+                Price = 12,
+
             };
-            Product productService = _service.GetCheapestProduct();
-            Assert.True(productTest.Name == productService.Name && productTest.Price == productService.Price);
+            Product productService = _service.CreateProduct(productTest);
+            Assert.True(productTest.Name == productService.Name && productTest.Price == productService.Price && productTest.Id == productService.Id);
         }
+
+        [Fact]
+        public void Test6_DeleteProduct()
+        {
+            Guid id = Guid.Parse("459b928b-7d90-4c33-8f49-bd556dc614a9");
+
+            Product productTest = new Product()
+            {
+                Id = id
+
+            };
+            Product productService = _service.DeleteProduct(productTest);
+            
+        }
+
     }
 }

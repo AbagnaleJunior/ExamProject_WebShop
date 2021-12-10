@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RedPillCorp.WebShop.Core.Models
+namespace RedPillCorp.WebShop.Application.Models
 {
     public class Product
     {

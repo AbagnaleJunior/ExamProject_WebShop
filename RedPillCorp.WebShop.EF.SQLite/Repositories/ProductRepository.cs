@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using RedPillCorp.WebShop.Core.Models;
+using RedPillCorp.WebShop.Application.Models;
 
 namespace RedPillCorp.WebShop.EF.SQLite.Repositories
 {
@@ -53,6 +53,26 @@ namespace RedPillCorp.WebShop.EF.SQLite.Repositories
                 Id = r.ModelId,
 
             }).OrderBy(r => r.Price).FirstOrDefault();
+        }
+
+        public Product CreateProduct(Product product)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Product DeleteProduct()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Product DeleteProduct(Product product)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Product UpdateProduct(Product returnProduct)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -8,15 +8,12 @@ using System.Threading.Tasks;
 
 namespace RedPillCorp.WebShop.EF.SQL
 {
-    public class ProductsDbContext : DbContext
+    public class MembersDbContext : DbContext
     {
-
-        public ProductsDbContext(DbContextOptions<ProductsDbContext> opt) : base(opt)
+        public MembersDbContext(DbContextOptions<MembersDbContext> opt) : base(opt)
         {
         }
 
-        public DbSet<ProductEntity> Products { get; set; }
-
+        public DbSet<MemberEntity> Members { get; set; }
     }
-   
 }

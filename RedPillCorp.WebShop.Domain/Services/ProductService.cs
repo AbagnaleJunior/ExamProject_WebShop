@@ -1,5 +1,5 @@
-﻿using RedPillCorp.WebShop.Core.IServices;
-using RedPillCorp.WebShop.Core.Models;
+﻿using RedPillCorp.WebShop.Application.IServices;
+using RedPillCorp.WebShop.Application.Models;
 using RedPillCorp.WebShop.Domain.IRepositories;
 using System;
 using System.Collections.Generic;
@@ -34,6 +34,22 @@ namespace RedPillCorp.WebShop.Domain.Services
         public Product GetCheapestProduct()
         {
             return _repo.GetCheapestProduct();
+        }
+
+
+
+        public Product CreateProduct(Product product)
+        {
+            return _repo.CreateProduct(product);
+        }
+        public Product DeleteProduct(Product product)
+        {
+
+           return _repo.DeleteProduct(product);
+        }
+        public Product UpdateProduct(Product returnProduct)
+        {
+            return _repo.UpdateProduct(returnProduct);
         }
     }
 }

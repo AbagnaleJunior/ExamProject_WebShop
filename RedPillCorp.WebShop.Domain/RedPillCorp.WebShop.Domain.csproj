@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RedPillCorp.Webshop.Core\RedPillCorp.WebShop.Core.csproj" />
+    <ProjectReference Include="..\RedPillCorp.Webshop.Core\RedPillCorp.WebShop.Application.csproj" />
   </ItemGroup>
 
 </Project>
