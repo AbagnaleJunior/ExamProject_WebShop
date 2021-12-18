@@ -2,11 +2,10 @@
 
 namespace RedPillCorp.WebShop.Application.Models
 {
-    public class Product
-    {
+    public class ProductCategory
+    {   
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public int Price { get; set; }
-        public ProductCategory Category { get; set; }
+        public int Amount { get; set; }
     }
 }

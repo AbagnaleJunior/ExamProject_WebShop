@@ -11,6 +11,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using RedPillCorp.WebShop.Application.IServices;
+using RedPillCorp.WebShop.Domain.Services;
+using RedPillCorp.WebShop.Domain.IRepositories;
+using RedPillCorp.WebShop.EF.SQL.Repositories;
+using Microsoft.EntityFrameworkCore;
+using RedPillCorp.WebShop.EF.SQL;
 
 namespace RedPillCorp.WebShop.WebAPI
 {
@@ -26,7 +32,17 @@ namespace RedPillCorp.WebShop.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<WebshopDbContext>(opt =>
+            {
+                 opt.UseSqlServer("Data Source = 10.176.111.31; Initial Catalog=HeilsbergFanClubTest; User ID=CSe20A_8; Password=CSe20A_8");
+            });
 
+            services.AddDbContext<WebshopDbContext>();
+            services.AddScoped<IMemberRepository, MemberRepository>();
+            services.AddScoped<IMemberService, MemberService>();
+            services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IProductService, ProductService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

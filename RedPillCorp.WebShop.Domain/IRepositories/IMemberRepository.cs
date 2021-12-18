@@ -1,15 +1,25 @@
-﻿using System;
+﻿using RedPillCorp.WebShop.Application.Models;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RedPillCorp.WebShop.Application.Models;
 
 namespace RedPillCorp.WebShop.Domain.IRepositories
 {
     public interface IMemberRepository
     {
-        Member CreateMember(Member newMember);
-        Member DeleteMember(Member member);
+        #region Database - for test
+
+        void ResetDatabase();
+        void FeedDatabase();
+        #endregion
+
+        #region CRUD
+        Member CreateMember(Member member);
+        Member ReadMemberById(Guid id);
+        List<Member> ReadAll();
+        Member UpdateMember(Member member);
+        void DeleteMember(Guid id);
+        Member ReadMemberByEmail(string email);
+        
+        #endregion
     }
 }
