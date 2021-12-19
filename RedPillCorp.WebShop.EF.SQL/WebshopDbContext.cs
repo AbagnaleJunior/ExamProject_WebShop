@@ -17,11 +17,17 @@ namespace RedPillCorp.WebShop.EF.SQL
         public DbSet<MemberEntity> Members { get; set; }
         public DbSet<ProductCategoryEntity> ProductCategories { get; set; }
 
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ProductCategoryEntity>()
             .HasMany(c => c.Products)
             .WithOne(e => e.Category);
+
+           /* modelBuilder.Entity<TagsEntity>()
+            .HasMany(c => c.Products)
+            .WithMany(e => e.Tags);*/
+
         }
     }
 }

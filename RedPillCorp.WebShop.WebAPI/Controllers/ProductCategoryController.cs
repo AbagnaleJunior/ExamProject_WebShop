@@ -26,11 +26,7 @@ namespace RedPillCorp.WebShop.WebAPI.Controllers
         {
             // Value Tuple kan ikke automatisk serialseres via dot.net 5.0 standard json serializer
             return _service.GetAllCategories();
-
         }
-
-
-
 
         // GET api/<ProductCategoryController>/5
         [HttpGet("{id}")]
@@ -38,8 +34,6 @@ namespace RedPillCorp.WebShop.WebAPI.Controllers
         {
             return _service.ProductCategory_GetById(id);
         }
-
-
 
         // POST api/<ProductCategoryController>
         [HttpPost]

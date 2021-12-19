@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RedPillCorp.WebShop.WebAPI.DTO
+namespace RedPillCorp.WebShop.WebAPI.DTO.Member
 {
-    public class CreateMemberDTO
+    public class Create
     {
-       /* public string Name { get; set; }
+        /* public string Name { get; set; }
         public string Email { get; set; }
         public int Phone { get; set; }*/
-
     }
 }

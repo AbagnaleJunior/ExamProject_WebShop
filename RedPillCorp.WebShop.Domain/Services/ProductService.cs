@@ -33,12 +33,61 @@ namespace RedPillCorp.WebShop.Domain.Services
 
         #endregion
 
+        #region Product
+        
+        // CREATE
+        public Product Product_Create(Product product)
+        {
+            return _repoProducts.CreateProduct(product);
+        }
+        // GET ALL
+        public List<Product> Product_GetAll()
+        {
+            return _repoProducts.GetAll();
+        }
+        // READ BY ID
+        public Product Product_GetById(Guid id)
+        {
+            return _repoProducts.GetById(id);
+        }
+        // READ ALL (IDs and Names)
+        public List<(Guid, string)> Product_GetAllIdsAndNames()
+        {
+            return _repoProducts.GetAllIdsAndNames();
+        }
+        // UPDATE
+        public Product Product_Update(Product product)
+        {
+            return _repoProducts.UpdateProduct(product);
+        }
+        // DELETE
+        public void Product_Delete(Guid id)
+        {
+            _repoProducts.DeleteProduct(id);
+        }
+
+        // OTHER
+        public Product Product_GetMostExpensive()
+        {
+            return _repoProducts.GetMostExpensiveProduct();
+        }
+        public Product Product_GetCheapest()
+        {
+            return _repoProducts.GetCheapestProduct();
+        }
+        #endregion
+
         #region ProductCategories
-        #region CRUD
+
         // CREATE
         public ProductCategory ProductCategory_Create(ProductCategory productCategory)
         {
             return _repoProductCategories.CreateCategory(productCategory);
+        }
+        // READ ALL
+        public List<ProductCategory> GetAllCategories()
+        {
+            return _repoProductCategories.GetAllCategories();
         }
         // READ
         public ProductCategory ProductCategory_GetById(Guid modelId)
@@ -56,56 +105,6 @@ namespace RedPillCorp.WebShop.Domain.Services
             _repoProductCategories.DeleteCategory(id);
         }
         #endregion
-        #endregion
 
-        #region Product
-        #region CRUD
-        // CREATE
-        public Product Product_Create(Product product)
-        {
-            return _repoProducts.CreateProduct(product);
-        }
-        // READ
-        public Product Product_GetById(Guid id)
-        {
-            return _repoProducts.GetById(id);
-        }// GET ALL
-        public List<Product> Product_GetAll()
-        {
-            return _repoProducts.GetAll();
-        }
-        // READ IDs and Names
-        public List<(Guid, string)> Product_GetAllIdsAndNames()
-        {
-            return _repoProducts.GetAllIdsAndNames();
-        }
-        // UPDATE
-        public Product Product_Update(Product product)
-        {
-            return _repoProducts.UpdateProduct(product);
-        }
-        // DELETE
-        public void Product_Delete(Guid id)
-        {
-            _repoProducts.DeleteProduct(id);
-        }
-        #endregion
-
-        #region Other
-        public Product Product_GetMostExpensive()
-        {
-            return _repoProducts.GetMostExpensiveProduct();
-        }
-        
-        public Product Product_GetCheapest()
-        {
-            return _repoProducts.GetCheapestProduct();
-        }
-        public List<ProductCategory> GetAllCategories()
-        {
-            return _repoProductCategories.GetAllCategories();
-        }
-        #endregion
-        #endregion
     }
 }

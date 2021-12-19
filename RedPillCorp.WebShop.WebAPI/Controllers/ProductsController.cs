@@ -42,7 +42,6 @@ namespace RedPillCorp.WebShop.WebAPI.Controllers
             return _service.Product_GetAll();
         }
 
-
         // GET api/<ProductController>/5
         [HttpGet("{id}")]
         public Product Get(Guid id)

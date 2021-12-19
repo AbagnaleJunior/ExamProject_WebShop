@@ -20,8 +20,4 @@
     <ProjectReference Include="..\RedPillCorp.WebShop.EF.SQL\RedPillCorp.WebShop.EF.SQL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Middleware\" />
-  </ItemGroup>
-
 </Project>

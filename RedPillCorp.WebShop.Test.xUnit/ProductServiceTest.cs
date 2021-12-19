@@ -46,7 +46,6 @@ namespace RedPillCorp.WebShop.Test.xUnit
             result.Add((Guid.Parse("37A2BEB6-F6B7-4BA1-B099-1FB8925467CB"), "Redbull"));
             Assert.Equal(result, _service.Product_GetAllIdsAndNames());
             
-            
             // READ GetById
             Guid id = Guid.Parse("CAC9BAF1-28BA-4E0F-9261-4DA81DFE6DDF");
             Product productServiceGetById = _service.Product_GetById(id);

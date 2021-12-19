@@ -12,14 +12,11 @@ namespace RedPillCorp.WebShop.Domain.IRepositories
         void FeedDatabase();
         #endregion
 
-        #region CRUD
         ProductCategory CreateCategory(ProductCategory productCategory);
+        List<ProductCategory> GetAllCategories();
         ProductCategory GetProductCategoryById(Guid modelId);
         ProductCategory UpdateCategory(ProductCategory productCategory);
         void DeleteCategory(Guid id);
-
-        List<ProductCategory> GetAllCategories();
-
-        #endregion
+       
     }
 }

@@ -69,9 +69,21 @@ namespace RedPillCorp.WebShop.EF.SQL.Repositories
             }).Entity;
 
             _ctx.SaveChanges();
-            // Hvad gør denne?(under)
+            
             productCategory.Id = productCategoryEntity.ModelId;
             return productCategory;
+        }
+
+        // REAL ALL
+        public List<ProductCategory> GetAllCategories()
+        {
+            return _ctx.ProductCategories.Select(e => new ProductCategory()
+            {
+                Id = e.ModelId,
+                Name = e.Name,
+                Amount = e.Products.Count
+
+            }).ToList();
         }
 
         // READ
@@ -83,17 +95,6 @@ namespace RedPillCorp.WebShop.EF.SQL.Repositories
                 Name = r.Name,
 
             }).FirstOrDefault(r => r.Id == modelId);
-        }
-
-        public List<ProductCategory> GetAllCategories()
-        {
-            return _ctx.ProductCategories.Select(e => new ProductCategory()
-            {
-                Id = e.ModelId,
-                Name = e.Name,
-                Amount = e.Products.Count
-
-            }).ToList();
         }
 
         // UPDATE

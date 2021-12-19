@@ -17,10 +17,9 @@ namespace RedPillCorp.WebShop.Test.xUnit
         private readonly IMemberService _service;
         private readonly WebshopDbContext _ctx;
 
+
         public MemberServiceTest()
         {
-
-
             var optionsBuilder = new DbContextOptionsBuilder<WebshopDbContext>();
             optionsBuilder.UseSqlServer("Data Source = 10.176.111.31; Initial Catalog=HeilsbergFanClubTest; User ID=CSe20A_8; Password=CSe20A_8");
             _ctx = new WebshopDbContext(optionsBuilder.Options);

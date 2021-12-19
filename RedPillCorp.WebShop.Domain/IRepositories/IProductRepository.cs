@@ -12,16 +12,15 @@ namespace RedPillCorp.WebShop.Domain.IRepositories
         void FeedDatabase();
         #endregion
 
-        #region CRUD
-        List<Product> GetAll();
         Product CreateProduct(Product product);
-        List<(Guid, string)> GetAllIdsAndNames();
+        List<Product> GetAll();
         Product GetById(Guid id);
+        List<(Guid, string)> GetAllIdsAndNames();
         Product UpdateProduct(Product product);
         void DeleteProduct(Guid id);
-        #endregion
 
         #region Other
+
         Product GetCheapestProduct();
         Product GetMostExpensiveProduct();
         #endregion

@@ -107,21 +107,6 @@ namespace RedPillCorp.WebShop.EF.SQL.Repositories
             return member;
         }
 
-        // READ
-        public Member ReadMemberById(Guid id)
-        {
-            return _ctx.Members.Select(e => new Member()
-            {
-                Id = e.ModelId,
-                Name = e.Name,
-                Email = e.Email,
-                Phone = e.Phone,
-                Password = e.Password,
-                Salt = e.Salt
-
-            }).FirstOrDefault(e => e.Id == id);
-        }
-
         // READ ALL
         public List<Member> ReadAll()
         {
@@ -137,7 +122,22 @@ namespace RedPillCorp.WebShop.EF.SQL.Repositories
             }).ToList();
         }
 
-        // READ
+        // READ BY ID
+        public Member ReadMemberById(Guid id)
+        {
+            return _ctx.Members.Select(e => new Member()
+            {
+                Id = e.ModelId,
+                Name = e.Name,
+                Email = e.Email,
+                Phone = e.Phone,
+                Password = e.Password,
+                Salt = e.Salt
+
+            }).FirstOrDefault(e => e.Id == id);
+        }
+
+        // READ BY EMAIL
         public Member ReadMemberByEmail(string email)
         {
             StringBuilder sb = new StringBuilder();
@@ -169,7 +169,6 @@ namespace RedPillCorp.WebShop.EF.SQL.Repositories
             }
 
             System.IO.File.WriteAllText(@"D:\test\member.txt", sb.ToString());
-
             return member;
         }
 

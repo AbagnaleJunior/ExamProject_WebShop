@@ -13,26 +13,25 @@ namespace RedPillCorp.WebShop.Application.IServices
         #endregion
 
         #region ProductCategories
-
-        #region CRUD
         // CREATE
         ProductCategory ProductCategory_Create(ProductCategory productCategory);
-        // READ
+        // READ BY ID
         ProductCategory ProductCategory_GetById(Guid modelId);
+        // READ ALL
+        List<ProductCategory> GetAllCategories();
         // UPDATE
         ProductCategory ProductCategory_Update(ProductCategory productCategory);
         // DELETE
         void ProductCategory_Delete(Guid id);
         #endregion
-        #endregion
 
         #region Product
 
-        #region CRUD
         // CREATE
         Product Product_Create(Product product);
-        List<Product> Product_GetAll();
         // READ ALL
+        List<Product> Product_GetAll();
+        // READ ALL (only extracting guid and name)
         List<(Guid, string)> Product_GetAllIdsAndNames();
         // READ
         Product Product_GetById(Guid id);
@@ -40,14 +39,11 @@ namespace RedPillCorp.WebShop.Application.IServices
         Product Product_Update(Product product);
         // DELETE
         void Product_Delete(Guid id);
-        #endregion
 
-        #region Other
+        // OTHER
         Product Product_GetMostExpensive();
         Product Product_GetCheapest();
-        List<ProductCategory> GetAllCategories();
 
-        #endregion
         #endregion
     }
 }

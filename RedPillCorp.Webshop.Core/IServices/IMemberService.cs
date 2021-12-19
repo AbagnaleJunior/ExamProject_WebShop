@@ -11,24 +11,18 @@ namespace RedPillCorp.WebShop.Application.IServices
         public void DatabaseSetup();
         #endregion
 
-        #region CRUD
-
         // CREATE
         Member CreateMember(Member member);
-
-        // READ
+        // READ (by Id)
         Member ReadMemberById(Guid id);
+        // READ (by Email)
         Member ReadMemberByEmail(string email);
-
         // READ ALL
         List<Member> ReadAll();
-
         // UPDATE
         Member UpdateMember(Member member);
-
         // DELETE
         void DeleteMember(Guid id);
 
-        #endregion
     }
 }

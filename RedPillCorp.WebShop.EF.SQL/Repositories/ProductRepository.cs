@@ -90,7 +90,7 @@ namespace RedPillCorp.WebShop.EF.SQL.Repositories
             }).Entity;
 
             _ctx.SaveChanges();
-            // Hvad gør denne?
+            
             product.Id = modelId;
             product.Category = new ProductCategory()
             {

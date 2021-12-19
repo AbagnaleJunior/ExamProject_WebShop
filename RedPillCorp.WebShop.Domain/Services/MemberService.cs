@@ -32,27 +32,33 @@ namespace RedPillCorp.WebShop.Domain.Services
         {
             return _repo.CreateMember(member);
         }
-        // READ
+
+        // READ ALL
+        public List<Member> ReadAll()
+        {
+            return _repo.ReadAll();
+        }
+
+        // READ BY ID
         public Member ReadMemberById(Guid id)
         {
             return _repo.ReadMemberById(id);
         }
+
+        // READ BY EMAIL
         public Member ReadMemberByEmail(string email)
         {
             Member member = _repo.ReadMemberByEmail(email);
             /*System.IO.File.WriteAllText(@"D:\test\member.txt", member.Email);*/
                 return member;
         }
-        // READ ALL
-        public List<Member> ReadAll()
-        {
-            return _repo.ReadAll();
-        }
+
         // UPDATE
         public Member UpdateMember(Member member)
         {
             return _repo.UpdateMember(member);
         }
+
         // DELETE
         public void DeleteMember(Guid id)
         {

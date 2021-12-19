@@ -24,7 +24,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedPillCorp.WebShop.WebAPI"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedPillCorp.WebShop.EF.SQL", "RedPillCorp.WebShop.EF.SQL\RedPillCorp.WebShop.EF.SQL.csproj", "{1291C50D-4393-4F3B-9BDE-E9D530AC6AA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedPillCorp.WebShop.Test.Help", "RedPillCorp.WebShop.Test.Help\RedPillCorp.WebShop.Test.Help.csproj", "{6AC2DD65-7F43-461E-8450-11A030CFAAF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedPillCorp.WebShop.Test.Help", "RedPillCorp.WebShop.Test.Help\RedPillCorp.WebShop.Test.Help.csproj", "{6AC2DD65-7F43-461E-8450-11A030CFAAF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
