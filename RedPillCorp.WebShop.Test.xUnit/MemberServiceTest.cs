@@ -38,7 +38,7 @@ namespace RedPillCorp.WebShop.Test.xUnit
             // READ BY ID
             Guid id = Guid.Parse("BA1D02D5-6516-4A05-9CBA-D2DBB5ED0C42");
             Member getById_Member = _service.ReadMemberById(id);
-            System.IO.File.WriteAllText(@"D:\test\Test3_ReadMemberById.txt", getById_Member.Id.ToString());
+            
             Assert.True(getById_Member.Id == id);
 
             // READ BY EMAIL

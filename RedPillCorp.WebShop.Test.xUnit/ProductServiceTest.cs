@@ -59,7 +59,7 @@ namespace RedPillCorp.WebShop.Test.xUnit
                 Price = 300,
             };
             Product GetMostExpensiveProduct_Service = _service.Product_GetMostExpensive();
-            System.IO.File.WriteAllText(@"D:\test\GetMostExpensiveProduct.txt", GetMostExpensiveProduct_Service.Name.ToString());
+            //System.IO.File.WriteAllText(@"D:\test\GetMostExpensiveProduct.txt", GetMostExpensiveProduct_Service.Name.ToString());
             Assert.True(GetMostExpensiveProduct_Product.Price == GetMostExpensiveProduct_Service.Price);
 
             // GetCheapestProduct

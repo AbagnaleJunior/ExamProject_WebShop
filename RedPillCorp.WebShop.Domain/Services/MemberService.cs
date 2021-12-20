@@ -49,8 +49,8 @@ namespace RedPillCorp.WebShop.Domain.Services
         public Member ReadMemberByEmail(string email)
         {
             Member member = _repo.ReadMemberByEmail(email);
-            /*System.IO.File.WriteAllText(@"D:\test\member.txt", member.Email);*/
-                return member;
+            //System.IO.File.WriteAllText(@"D:\test\member.txt", member.Email);
+            return member;
         }
 
         // UPDATE
