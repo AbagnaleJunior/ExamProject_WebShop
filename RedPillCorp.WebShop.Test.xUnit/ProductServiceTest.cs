@@ -24,7 +24,8 @@ namespace RedPillCorp.WebShop.Test.xUnit
         public ProductServiceTest()
         {
             var optionsBuilder = new DbContextOptionsBuilder<WebshopDbContext>();
-            optionsBuilder.UseSqlServer("Data Source = 10.176.111.31; Initial Catalog=HeilsbergFanClubTest; User ID=CSe20A_8; Password=CSe20A_8");
+            //optionsBuilder.UseSqlServer("Data Source = 10.176.111.31; Initial Catalog=HeilsbergFanClubTest; User ID=CSe20A_8; Password=CSe20A_8");
+            optionsBuilder.UseSqlServer("Data Source=tcp:redpillcorp-webshop-webapidbserver.database.windows.net,1433;Initial Catalog=RedPillCorp.WebShop.WebAPI_db;User Id=CSe20A_8@redpillcorp-webshop-webapidbserver;Password=Frederik2021!Pass");
             _ctx = new WebshopDbContext(optionsBuilder.Options);
 
             IProductCategoryRepository repoProductCategories = new ProductCategoryRepository(_ctx);

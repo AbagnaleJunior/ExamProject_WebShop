@@ -34,7 +34,8 @@ namespace RedPillCorp.WebShop.WebAPI
         {
             services.AddDbContext<WebshopDbContext>(opt =>
             {
-                 opt.UseSqlServer("Data Source = 10.176.111.31; Initial Catalog=HeilsbergFanClubTest; User ID=CSe20A_8; Password=CSe20A_8");
+                 //opt.UseSqlServer("Data Source = 10.176.111.31; Initial Catalog=HeilsbergFanClubTest; User ID=CSe20A_8; Password=CSe20A_8");
+                opt.UseSqlServer("Data Source=tcp:redpillcorp-webshop-webapidbserver.database.windows.net,1433;Initial Catalog=RedPillCorp.WebShop.WebAPI_db;User Id=CSe20A_8@redpillcorp-webshop-webapidbserver;Password=Frederik2021!Pass");
             });
 
             services.AddDbContext<WebshopDbContext>();
@@ -53,14 +54,16 @@ namespace RedPillCorp.WebShop.WebAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
+            
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RedPillCorp.WebShop.WebAPI v1"));
-            }
+            
 
             app.UseHttpsRedirection();
+
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
 
             app.UseRouting();
 
@@ -68,7 +71,9 @@ namespace RedPillCorp.WebShop.WebAPI
 
             app.UseEndpoints(endpoints =>
             {
+
                 endpoints.MapControllers();
+                endpoints.MapFallbackToFile("index.html");
             });
         }
     }

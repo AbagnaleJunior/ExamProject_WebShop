@@ -32,7 +32,7 @@ namespace RedPillCorp.WebShop.EF.SQL.Repositories
                 _ctx.ProductCategories.Remove(productCategory);
             }
             _ctx.SaveChanges();
-            _ctx.Database.ExecuteSqlRaw("TRUNCATE TABLE ProductCategories");
+            _ctx.Database.ExecuteSqlRaw("DELETE FROM ProductCategories");
             _ctx.Database.ExecuteSqlRaw("DBCC CHECKIDENT ('ProductCategories',RESEED, 1)");
         }
 

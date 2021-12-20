@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "apis1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/RedPillCorpWebShopWebAPIapi/apis/RedPillCorpWebShopWebAPI",
+      "type": "apis.azure"
+    },
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/redpillcorp-webshop-webapidbserver/databases/RedPillCorp.WebShop.WebAPI_db",
+      "type": "mssql.azure",
+      "connectionId": "AzureSQLDatabase",
+      "secretStore": null
+    }
+  }
+}

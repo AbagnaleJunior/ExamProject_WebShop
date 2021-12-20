@@ -22,8 +22,9 @@ namespace RedPillCorp.WebShop.Domain.Services
         public void DatabaseSetup()
         {
             // CLEANING DB
-            _repoProductCategories.ResetDatabase();
             _repoProducts.ResetDatabase();
+            _repoProductCategories.ResetDatabase();
+            
 
             // INIT DB
             _repoProductCategories.FeedDatabase();

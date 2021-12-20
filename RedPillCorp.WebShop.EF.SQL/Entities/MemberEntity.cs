@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace RedPillCorp.WebShop.EF.SQL.Entities
 {
     public class MemberEntity
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
+        [Key]
         public Guid ModelId { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
