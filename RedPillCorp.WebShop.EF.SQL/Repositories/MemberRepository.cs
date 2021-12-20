@@ -168,7 +168,6 @@ namespace RedPillCorp.WebShop.EF.SQL.Repositories
                 }
             }
 
-            System.IO.File.WriteAllText(@"D:\test\member.txt", sb.ToString());
             return member;
         }
 
